@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sigma  Java Academy</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="bg-particles"></div>
+
+  <header class="topbar">
+    <div class="nav">
+      <div class="brand">
+        <div class="logo"></div>
+        <span>Sigma Java Academy</span>
+      </div>
+
+      <div class="navlinks">
+        <a href="#class">Class</a>
+        <a href="#variables">Variables</a>
+        <a href="#objects">Objects</a>
+        <a href="#methods">Methods</a>
+        <a href="#inheritance">Inheritance</a>
+        <a href="#arrays">Arrays</a>
+        <a href="#strings">Strings</a>
+      </div>
+
+      <button class="menu-btn" onclick="toggleSidebar()">☰</button>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <button class="close-btn" onclick="toggleSidebar()">✕</button>
+        <h3>Search Topics</h3>
+        <input id="searchBox" class="search" type="text" placeholder="Search Java topics..." />
+      </div>
+      <ul class="topic-list" id="topicList">
+        <li><a href="#class">Class</a></li>
+        <li><a href="#variables">Variables</a></li>
+        <li><a href="#objects">Objects</a></li>
+        <li><a href="#methods">Methods</a></li>
+        <li><a href="#overloading">Method Overloading</a></li>
+        <li><a href="#overriding">Method Overriding</a></li>
+        <li><a href="#inheritance">Inheritance</a></li>
+        <li><a href="#functions">Functions</a></li>
+        <li><a href="#arrays">Arrays</a></li>
+        <li><a href="#vectors">Vectors</a></li>
+        <li><a href="#strings">Strings</a></li>
+        <li><a href="#exceptions">Exception Handling</a></li>
+      </ul>
+    </aside>
+
+    <main class="content">
+      <section class="hero">
+        <h1>Learn Java in a Crazy, Clean, Modern Way</h1>
+        <p>This one-page website explains all major Java basics with theory and code snippets, while giving you a stylish dashboard-like interface, smooth animations, navigation, and live search.</p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#class">Start Learning</a>
+          <a class="btn" href="#exceptions">Skip to Exceptions</a>
+        </div>
+      </section>
+
+      <section class="section" id="class">
+        <h2>1. Class <span class="tag">Blueprint</span></h2>
+        <p>A class is a blueprint for creating objects. It defines properties and behaviors that objects will use.</p>
+        <pre><code>class Student {
+    String name;
+    int age;
+
+    void show() {
+        System.out.println(name + " " + age);
+    }
+}</code></pre>
+      </section>
+
+      <section class="section" id="variables">
+        <h2>2. Variables <span class="tag">Data holders</span></h2>
+        <p>Variables store values. Java has local variables, instance variables, and static variables.</p>
+        <pre><code>class Demo {
+    int x = 10;
+    static int y = 20;
+
+    void show() {
+        int z = 30;
+        System.out.println(x + y + z);
+    }
+}</code></pre>
+      </section>
+
+      <section class="section" id="objects">
+        <h2>3. Objects <span class="tag">Instances</span></h2>
+        <p>An object is a real instance of a class. It has its own values and can call the class methods.</p>
+        <pre><code>Student s1 = new Student();
+s1.name = "Abhishek";
+s1.age = 20;
+s1.show();</code></pre>
+      </section>
+
+      <section class="section" id="methods">
+        <h2>4. Methods <span class="tag">Actions</span></h2>
+        <p>Methods are blocks of code that perform tasks. They make code reusable and organized.</p>
+        <pre><code>class Calc {
+    int add(int a, int b) {
+        return a + b;
+    }
+}</code></pre>
+      </section>
+
+      <section class="section" id="overloading">
+        <h2>4a. Method Overloading <span class="tag">Same name, different params</span></h2>
+        <p>Overloading means using the same method name with different parameter lists.</p>
+        <pre><code>class Calc {
+    int add(int a, int b) { return a + b; }
+    int add(int a, int b, int c) { return a + b + c; }
+}</code></pre>
+      </section>
+
+      <section class="section" id="overriding">
+        <h2>4b. Method Overriding <span class="tag">Child version</span></h2>
+        <p>Overriding happens when a child class defines its own version of a parent method.</p>
+        <pre><code>class Animal {
+    void sound() {
+        System.out.println("Animal sound");
+    }
+}
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Bark");
+    }
+}</code></pre>
+      </section>
+
+      <section class="section" id="inheritance">
+        <h2>5. Inheritance <span class="tag">Types in Java</span></h2>
+        <p>
+          Inheritance allows one class to acquire properties and methods of another class.
+          Java supports single, multilevel, and hierarchical inheritance using classes.
+          Multiple and hybrid inheritance are achieved using interfaces.
+        </p>
+
+        <div class="two">
+          <div class="mini">
+            <h3>Single Inheritance</h3>
+            <p>One child class inherits from one parent class.</p>
+            <pre><code>class Animal {
+    void eat() {
+        System.out.println("Eating");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Barking");
+    }
+}</code></pre>
+          </div>
+
+          <div class="mini">
+            <h3>Multilevel Inheritance</h3>
+            <p>One class inherits from a child class, forming a chain.</p>
+            <pre><code>class GrandParent {
+    void house() {
+        System.out.println("Grandparent house");
+    }
+}
+
+class Parent extends GrandParent {
+    void bike() {
+        System.out.println("Parent bike");
+    }
+}
+
+class Child extends Parent {
+    void mobile() {
+        System.out.println("Child mobile");
+    }
+}</code></pre>
+          </div>
+
+          <div class="mini">
+            <h3>Hierarchical Inheritance</h3>
+            <p>Multiple child classes inherit from the same parent class.</p>
+            <pre><code>class Shape {
+    void draw() {
+        System.out.println("Drawing shape");
+    }
+}
+
+class Circle extends Shape {
+    void circleInfo() {
+        System.out.println("Circle");
+    }
+}
+
+class Square extends Shape {
+    void squareInfo() {
+        System.out.println("Square");
+    }
+}</code></pre>
+          </div>
+
+          <div class="mini">
+            <h3>Multiple Inheritance</h3>
+            <p>Java uses interfaces to achieve multiple inheritance.</p>
+            <pre><code>interface Printer {
+    void print();
+}
+
+interface ScannerDevice {
+    void scan();
+}
+
+class Machine implements Printer, ScannerDevice {
+    public void print() {
+        System.out.println("Printing");
+    }
+
+    public void scan() {
+        System.out.println("Scanning");
+    }
+}</code></pre>
+          </div>
+
+          <div class="mini">
+            <h3>Hybrid Inheritance</h3>
+            <p>Hybrid inheritance is a combination of two or more inheritance types. In Java, it is commonly done with interfaces.</p>
+            <pre><code>interface A {
+    void showA();
+}
+
+interface B extends A {
+    void showB();
+}
+
+class C {
+    void showC() {
+        System.out.println("Class C");
+    }
+}
+
+class D extends C implements B {
+    public void showA() {
+        System.out.println("A");
+    }
+
+    public void showB() {
+        System.out.println("B");
+    }
+}</code></pre>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="functions">
+        <h2>6. Functions <span class="tag">Methods in Java</span></h2>
+        <p>In Java, functions are called methods. They may return a value or be void.</p>
+        <pre><code>public static int square(int n) {
+    return n * n;
+}</code></pre>
+      </section>
+
+      <section class="section" id="arrays">
+        <h2>7. Arrays <span class="tag">Fixed size</span></h2>
+        <p>An array stores multiple values of the same type in one variable.</p>
+        <pre><code>int[] nums = {10, 20, 30, 40};
+
+for (int i = 0; i < nums.length; i++) {
+    System.out.println(nums[i]);
+}</code></pre>
+      </section>
+
+      <section class="section" id="vectors">
+        <h2>8. Vectors <span class="tag">Dynamic list</span></h2>
+        <p>Vector is a growable list from <code>java.util</code>. It automatically expands as items are added.</p>
+        <pre><code>import java.util.Vector;
+
+Vector<String> v = new Vector<>();
+v.add("Java");
+v.add("Python");
+System.out.println(v);</code></pre>
+      </section>
+
+      <section class="section" id="strings">
+        <h2>9. Strings <span class="tag">Text</span></h2>
+        <p>Strings store text and are immutable in Java, meaning they cannot be changed after creation.</p>
+        <pre><code>String name = "Abhishek";
+System.out.println(name.length());
+System.out.println(name.toUpperCase());</code></pre>
+      </section>
+
+      <section class="section" id="exceptions">
+        <h2>10. Exception Handling <span class="tag">Error control</span></h2>
+        <p>Exception handling manages runtime errors using try, catch, finally, throw, and throws.</p>
+        <pre><code>try {
+    int a = 10 / 0;
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero");
+} finally {
+    System.out.println("Done");
+}</code></pre>
+      </section>
+
+      <div class="footer">
+        Built for Java learners with a futuristic neon dashboard style.
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
